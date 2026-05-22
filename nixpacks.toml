@@ -3,7 +3,7 @@ nixPkgs = ["nodejs_24", "bun", "python3", "pkg-config"]
 aptPkgs = ["build-essential"]
 
 [phases.install]
-cmds = ["bun install --frozen-lockfile"]
+cmds = ["bun install --no-frozen-lockfile --ignore-scripts"]
 
 [phases.build]
 cmds = ["bunx turbo run build --filter=@elizaos/core --filter=@elizaos/agent --filter=@elizaos/agent-server --filter=!metrics-dashboard --filter=!*-example* --filter=!*-bench* --filter=!plugin-undesirables"]
