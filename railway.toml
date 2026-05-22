@@ -1,1 +1,7 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "bun install --frozen-lockfile && bunx turbo run build --filter=@elizaos/core --filter=@elizaos/agent --filter=@elizaos/agent-server --filter=!metrics-dashboard --filter=!*-example* --filter=!*-bench* --filter=!plugin-undesirables"
 
+[deploy]
+startCommand = "bun run start"
+restartPolicyConfig = { policy = "ON_FAILURE", maxRetries = 3 }
