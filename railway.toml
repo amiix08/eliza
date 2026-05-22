@@ -1,5 +1,6 @@
 [build]
 builder = "NIXPACKS"
+pkgs = ["nodejs_24", "bun", "python3", "pkg-config", "build-essential"]
 buildCommand = "bun install --frozen-lockfile && bunx turbo run build --filter=@elizaos/core --filter=@elizaos/agent --filter=@elizaos/agent-server --filter=!metrics-dashboard --filter=!*-example* --filter=!*-bench* --filter=!plugin-undesirables"
 
 [deploy]
